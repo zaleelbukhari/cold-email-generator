@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Supply side outreach copy generator. Generate personalized cold email copy for connector model recruitment agency outreach.">
+  <title>Connector Copy — Supply Side Outreach Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Background FX -->
+  <div class="marble-overlay"></div>
+  <div class="background-glow"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div style="width: 100%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+      <a href="#" class="logo">SNAPY<span>SCALE</span></a>
+      <div class="nav-links">
+        <span>Outreach Consul</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="app-container">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="app-header__badge">Connector Framework</div>
+      <h1>Supply Side <br><span class="text-gold">Copy Generator</span></h1>
+      <div class="divider-gold"></div>
+      <p>Scrape agency intelligence. Generate market-aware outreach. Route access to qualified partners.</p>
+    </header>
+
+    <!-- Step Navigation -->
+    <nav class="steps-nav" id="stepsNav">
+      <div class="step-item active" data-step="1" id="stepItem1">
+        <div class="step-number" id="stepNum1">I</div>
+        <div class="step-label">Import Leads</div>
+      </div>
+      <div class="step-connector" id="stepConn1"></div>
+      <div class="step-item" data-step="2" id="stepItem2">
+        <div class="step-number" id="stepNum2">II</div>
+        <div class="step-label">Configure Copy</div>
+      </div>
+      <div class="step-connector" id="stepConn2"></div>
+      <div class="step-item" data-step="3" id="stepItem3">
+        <div class="step-number" id="stepNum3">III</div>
+        <div class="step-label">Generated Output</div>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+         PANEL I: Import Leads
+         ============================================================ -->
+    <section class="panel active" id="panel1">
+      <div class="card">
+        <div class="card__header">
+          <div class="card__title">
+            <span class="card__title-icon">📋</span>
+            Lead Import
+          </div>
+          <div class="leads-count" id="leadsCount" style="display:none;">
+            <span id="leadsCountNum">0</span> Leads Loaded
+          </div>
+        </div>
+
+        <!-- Drop zone -->
+        <div class="drop-zone" id="dropZone">
+          <div class="drop-zone__icon">📁</div>
+          <div class="drop-zone__title">Drop your CSV file here or click to browse</div>
+          <div class="drop-zone__subtitle">Columns: agency_name, website_url, contact_name (optional), contact_email (optional)</div>
+          <input type="file" id="fileInput" accept=".csv,.tsv,.txt">
+        </div>
+
+        <div class="divider">or add manually</div>
+
+        <!-- Leads Table -->
+        <div class="leads-table-wrapper" id="leadsTableWrapper">
+          <table class="leads-table" id="leadsTable">
+            <thead>
+              <tr>
+                <th>Agency Name</th>
+                <th>Website URL</th>
+                <th>Contact Name</th>
+                <th>Contact Email</th>
+                <th class="td-actions"></th>
+              </tr>
+            </thead>
+            <tbody id="leadsTableBody">
+              <tr data-row="0">
+                <td><input type="text" placeholder="e.g. Harnham" data-field="agency_name"></td>
+                <td><input type="text" placeholder="e.g. harnham.com" data-field="website_url"></td>
+                <td><input type="text" placeholder="Optional" data-field="contact_name"></td>
+                <td><input type="text" placeholder="Optional" data-field="contact_email"></td>
+                <td class="td-actions"><button class="btn-remove-row" title="Remove row">×</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="actions-bar">
+          <div class="actions-bar__left">
+            <button class="btn btn-ghost btn-sm" id="btnAddRow">+ Add Row</button>
+            <button class="btn btn-ghost btn-sm" id="btnClearAll">Clear All</button>
+            <button class="btn btn-ghost btn-sm" id="btnLoadSample">Load Sample</button>
+          </div>
+          <div class="actions-bar__right">
+            <button class="btn btn-primary" id="btnNext1">Configure Copy →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PANEL II: Configure Copy Framework
+         ============================================================ -->
+    <section class="panel" id="panel2">
+      <div class="card">
+        <div class="card__header">
+          <div class="card__title">
+            <span class="card__title-icon">✍️</span>
+            Supply Side Framework
+          </div>
+          <div class="card__subtitle">This guides the AI's tone, positioning, and structure</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            Supply Copy Context
+            <span class="form-label-sub">(pre-filled with your connector framework)</span>
+          </label>
+          <textarea class="form-textarea tall" id="supplyCopy" placeholder="Enter your supply-side copy framework..."></textarea>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__header">
+          <div class="card__title">
+            <span class="card__title-icon">🎯</span>
+            Demand Side Copy
+          </div>
+          <div class="card__subtitle">Optional — provides additional market context</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            Demand Copy Context
+            <span class="form-label-sub">(optional)</span>
+          </label>
+          <textarea class="form-textarea" id="demandCopy" placeholder="e.g. Current demand signals — 14 live mandates for senior full-stack engineers across Series B+ US SaaS companies..."></textarea>
+        </div>
+      </div>
+
+      <div class="actions-bar">
+        <div class="actions-bar__left">
+          <button class="btn btn-ghost btn-sm" id="btnBack2">← Back to Leads</button>
+        </div>
+        <div class="actions-bar__right">
+          <button class="btn btn-primary" id="btnGenerate">
+            <span id="btnGenerateText">⚡ Generate Emails</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-container" id="progressContainer" style="display:none;">
+        <div class="card">
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <div class="progress-info">
+            <div class="progress-info__left">
+              <div class="progress-spinner" id="progressSpinner"></div>
+              <span id="progressText">Starting...</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:15px;">
+              <span class="progress-info__right" id="progressCount">0 / 0</span>
+              <button class="btn btn-ghost btn-sm" id="btnStopGenerate" style="padding: 4px 10px; font-size: 0.68rem; margin: 0; display: inline-flex;">🛑 Stop</button>
+              <button class="btn btn-primary btn-sm" id="btnResumeGenerate" style="padding: 4px 10px; font-size: 0.68rem; margin: 0; display: none;">⚡ Resume</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PANEL III: Generated Output
+         ============================================================ -->
+    <section class="panel" id="panel3">
+      <div class="results-header">
+        <div>
+          <h2>Generated <span class="text-gold">Outreach</span></h2>
+          <p>
+            <span id="resultsCount">0</span> leads processed · <span id="emailsCount">0</span> emails generated
+          </p>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <button class="btn btn-secondary btn-sm" id="btnExportCSV">📥 Export CSV</button>
+          <button class="btn btn-ghost btn-sm" id="btnBackToConfig">← Reconfigure</button>
+          <button class="btn btn-ghost btn-sm" id="btnStartOver">↺ New Batch</button>
+        </div>
+      </div>
+      
+      <!-- Cohort Approval / Remaining Progress Banner -->
+      <div class="cohort-banner" id="cohortBanner" style="display:none; margin-bottom: 24px;">
+        <div class="cohort-banner__content">
+          <div class="cohort-banner__title">⚜️ Test Batch Complete</div>
+          <div class="cohort-banner__subtitle">First cohort of <span id="cohortTestCount" class="text-gold">5</span> leads generated. Review the drafts below. Ready to generate for the remaining <span id="cohortRemainingCount" class="text-gold">0</span> leads?</div>
+        </div>
+        <div class="cohort-banner__actions" style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+          <div class="form-group" style="margin: 0; display: flex; align-items: center; gap: 10px;">
+            <label class="form-label" style="margin: 0; font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-body); text-transform: none; letter-spacing: 0;">Quantity:</label>
+            <select id="selectCohortCount" style="background: var(--bg-dark); border: 1px solid var(--gold-border); color: var(--text-main); padding: 8px 12px; font-size: 0.82rem; outline: none; font-family: var(--font-body); width: 140px;">
+              <option value="300">300 leads</option>
+              <option value="500">500 leads</option>
+              <option value="1000">1000 leads</option>
+              <option value="all" selected>All remaining</option>
+              <option value="custom">Custom count</option>
+            </select>
+            <input type="number" id="inputCustomCohortCount" min="1" placeholder="e.g. 50" style="display: none; width: 85px; background: var(--bg-dark); border: 1px solid var(--gold-border); color: var(--text-main); padding: 7px 10px; font-size: 0.82rem; outline: none; font-family: var(--font-body);" />
+          </div>
+          <button class="btn btn-primary btn-sm" id="btnGenerateRemaining" style="padding: 10px 20px; font-size: 0.75rem;">⚡ Begin Generation</button>
+        </div>
+      </div>
+
+      <!-- Inline Progress for Remaining Leads -->
+      <div class="cohort-progress-container" id="cohortProgressContainer" style="display:none; margin-bottom: 24px;">
+        <div class="card" style="padding: 20px;">
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar" id="cohortProgressBar"></div>
+          </div>
+          <div class="progress-info">
+            <div class="progress-info__left">
+              <div class="progress-spinner" id="cohortProgressSpinner"></div>
+              <span id="cohortProgressText">Starting remaining cohort...</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:15px;">
+              <span class="progress-info__right" id="cohortProgressCount">0 / 0</span>
+              <button class="btn btn-ghost btn-sm" id="btnStopCohort" style="padding: 4px 10px; font-size: 0.68rem; margin: 0; display: inline-flex;">🛑 Stop</button>
+              <button class="btn btn-primary btn-sm" id="btnResumeCohort" style="padding: 4px 10px; font-size: 0.68rem; margin: 0; display: none;">⚡ Resume</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resultsContainer">
+        <div class="empty-state" id="emptyResults">
+          <div class="empty-state__icon">📭</div>
+          <div class="empty-state__title">No Emails Generated Yet</div>
+          <div class="empty-state__subtitle">Import leads and configure your copy framework to begin</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- API Status -->
+  <div class="api-status" id="apiStatus">
+    <div class="api-status__dot" id="apiDot"></div>
+    <span id="apiStatusText">Checking...</span>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
